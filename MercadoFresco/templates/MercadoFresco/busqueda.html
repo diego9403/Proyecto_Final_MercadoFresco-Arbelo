@@ -1,0 +1,41 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+<div>
+    <div>
+        <p>Buscar Cliente</p>
+        <form action="/MercadoFresco/buscarcliente" method="GET">
+    
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar" />
+    
+        <p></p>
+        </form>
+    </div>
+    <div>
+        <p>Buscar Tienda</p>
+        <form action="/MercadoFresco/buscartienda" method="GET">
+    
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar" />
+    
+        <p></p>
+        </form>
+    </div>
+    <div>
+        <p>Buscar Pedido</p>
+        <form action="/MercadoFresco/buscarpedido" method="GET">
+    
+        <input type="number" name="id" id="id">
+        <input type="submit" value="Buscar" />
+    
+        <p></p>
+        </form>
+    </div>
+
+</div>
+    
+
+{% endblock %}
+ 

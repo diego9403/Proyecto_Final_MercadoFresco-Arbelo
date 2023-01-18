@@ -11,7 +11,7 @@ class Cliente(models.Model):
     email=models.EmailField()
     
     def __str__(self):
-        return f"Nombre: {self.nombre} Apellido: {self.apellido}"
+        return f"Nombre: {self.nombre} {self.apellido}"
 
 
 class Tienda(models.Model):
@@ -32,9 +32,10 @@ class Pedido(models.Model):
     tienda=models.CharField(max_length=50)
     descripcion=models.CharField(max_length=500)
     
+    
 
     def __str__(self):
-        return f"Cliente: {self.cliente} Tienda:{self.tienda}"
+        return f"Cliente: {self.cliente} Tienda:{self.tienda} Nro pedido:{self.id}"
 
 
  

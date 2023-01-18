@@ -1,0 +1,23 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+{% if cliente %}
+
+<p> Informacion Cliente </p>
+
+<ul>
+    {% for cliente in cliente %}
+    <li>Nombre: {{cliente.nombre}} {{cliente.apellido}} </li>
+    <li>Email: {{cliente.email}} </li>
+    <li>Numero de telefono: {{cliente.nro_tel}} </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class=text-center>No hay datos con esa descripción</p>
+
+{% endif %}
+
+
+{% endblock %}
