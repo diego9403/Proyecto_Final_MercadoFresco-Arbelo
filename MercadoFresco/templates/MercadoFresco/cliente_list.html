@@ -1,0 +1,29 @@
+    {% extends "MercadoFresco/padre.html" %}
+
+
+    {% block contenidoQueCambia %}
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in object_list %}
+
+            <li>
+                <p>NOMBRE: {{ cliente.nombre }} {{cliente.apellido}}</p>
+                <p> 
+                    <a href="{% url 'Detail' cliente.id %}">Ver</a> | 
+                    <a href="{% url 'Edit' cliente.id %}">Editar</a> | 
+                    <a href="{% url 'Delete' cliente.id %}">Borrar</a> 
+                
+                </p> 
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'New'  %}">Nuevo</a> | 
+
+    <br>
+
+    <button>
+        <a href="../clientes">Volver</a>
+    </button>
+    {% endblock %}

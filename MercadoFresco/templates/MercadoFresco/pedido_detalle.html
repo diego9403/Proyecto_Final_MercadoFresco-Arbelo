@@ -1,0 +1,14 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+<p>Nro Pedido: <i>{{ pedido.id }}</i></p>
+<p>CLiente: <i>{{ pedido.cliente }}</i></p>
+<p>Tienda: <i>{{ pedido.tienda }}</i></p>
+<p>Descripcion: <i>{{ pedido.descripcion }}</i></p>
+<p>
+    <a href="{% url 'ListP' %}">Regresar</a>
+</p>
+
+{% endblock %}

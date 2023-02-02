@@ -1,0 +1,30 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+
+
+<h3 class=text-center>Información de Perfil</h3>
+   <p></p>
+<div>
+    <h6 class=text-center>Nombre de Usuario: {{user.username}}</h6>
+    <h6 class=text-center>Email: {{user.email}}</h6>
+    <h6 class=text-center>Nombre:{{user.first_name}}</h6>
+    <h6 class=text-center>Apellido:{{user.last_name}}</h6>
+</div>
+<p></p>
+
+
+<p></p>
+<div class="text-center row m-2">
+    <form class="col-md-6" action="logout" method="GET">
+        <button  type="submit">Desloguear</button>
+    </form> 
+    <form class="col-md-6" action="editarPerfil" method="POST">{% csrf_token %}
+        <button  type="submit">Editar</button>
+    </form> 
+</div>
+<p></p>
+{% endblock %}
+

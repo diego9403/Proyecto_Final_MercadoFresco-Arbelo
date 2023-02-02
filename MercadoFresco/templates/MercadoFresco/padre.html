@@ -23,11 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-success text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"> MercadoFresco </a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
+                <img class="img-responsive" width="200px" src="{% static 'MercadoFresco/assets/img/portfolio/logo1.png' %}" />
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Inicio' %}">Inicio</a></li>
@@ -35,6 +31,13 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Tiendas' %}">Tiendas</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Pedidos' %}">Pedidos</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Busqueda' %}">Buscar</a></li>
+                        {% if not request.user.is_authenticated %}
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Register' %}">Registrarse</a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Perfil' %}">Perfil</a></li>
+                        {% endif %}
+
                     </ul>
                 </div>
             </div>
@@ -42,7 +45,7 @@
         <header class="masthead height:100px bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{% static 'MercadoFresco/assets/img/portfolio/verduras.webp' %}" alt="..." />
+                <img class="masthead-avatar rounded-circle mb-5" src="{% static 'MercadoFresco/assets/img/portfolio/verduras.webp' %}" alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">MercadoFresco</h1>                
             </div>
@@ -62,9 +65,7 @@
                  <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">Ayuda</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
+                            <li class="list-inline-item"><a href="{% url 'SobreMi' %}">Sobre Mi</a></li>                            
                         </ul>
                         <p class="text-light small mb-4 mb-lg-0">&copy; Curso de Python - CoderHouse.</p>
                     <div>

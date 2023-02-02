@@ -1,0 +1,25 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+<h1>Lista de Tiendas</h1>
+<ul>
+    {% for tienda in object_list %}
+
+        <li>
+            <p>NOMBRE: {{ tienda.nombre }}</p>
+            <p> 
+                <a href="{% url 'DetailT' tienda.id %}">Ver</a> | 
+                <a href="{% url 'EditT' tienda.id %}">Editar</a> | 
+                <a href="{% url 'DeleteT' tienda.id %}">Borrar</a> 
+            
+            </p> 
+        </li>
+
+    {% endfor %}
+</ul>
+
+<a href="{% url 'NewT'  %}">Nuevo</a> | 
+
+<br>
+{% endblock %}

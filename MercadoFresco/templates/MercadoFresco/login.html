@@ -1,0 +1,18 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+
+<p></p>
+<div class=text-center>
+    <form action="" method="POST">
+        {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Inciar sesión</button>
+    </form>
+</div>
+<p></p>
+
+{% endblock %}
+

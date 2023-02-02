@@ -5,10 +5,10 @@ from django.db import models
 
 class Cliente(models.Model):
     
-    nombre=models.CharField(max_length=50)
-    apellido=models.CharField(max_length=50)
-    nro_tel=models.IntegerField()
-    email=models.EmailField()
+    nombre=models.CharField(max_length=30)
+    apellido=models.CharField(max_length=30)
+    nro_tel=models.IntegerField(max_length=30)
+    email=models.EmailField(max_length=60)
     
     def __str__(self):
         return f"Nombre: {self.nombre} {self.apellido}"
@@ -16,9 +16,9 @@ class Cliente(models.Model):
 
 class Tienda(models.Model):
 
-    nombre=models.CharField(max_length=50)
-    nro_tel=models.IntegerField()
-    email=models.EmailField()
+    nombre=models.CharField(max_length=30)
+    nro_tel=models.IntegerField(max_length=30)
+    email=models.EmailField(max_length=60)
     direccion=models.CharField(max_length=50)
 
     def __str__(self):
@@ -28,8 +28,8 @@ class Tienda(models.Model):
 
 class Pedido(models.Model):
 
-    cliente=models.CharField(max_length=50)
-    tienda=models.CharField(max_length=50)
+    cliente=models.CharField(max_length=30)
+    tienda=models.CharField(max_length=30)
     descripcion=models.CharField(max_length=500)
     
     

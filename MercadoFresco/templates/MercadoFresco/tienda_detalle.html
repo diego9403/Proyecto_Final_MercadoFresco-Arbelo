@@ -1,0 +1,14 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+<p>Nombre: <i>{{ tienda.nombre }}</i></p>
+<p>Numero: <i>{{ tienda.nro_tel }}</i></p>
+<p>Email: <i>{{ tienda.email }}</i></p>
+<p>Direccion: <i>{{ tienda.direccion }}</i></p>
+<p>
+    <a href="{% url 'ListT' %}">Regresar</a>
+</p>
+
+{% endblock %}

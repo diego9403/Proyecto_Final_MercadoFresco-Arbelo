@@ -1,0 +1,10 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+    {% block contenidoQueCambia %}
+    <form method="post">{% csrf_token %}
+        ¿Estás seguro que deseas borrar el cliente "{{ object }}"?
+        <input type="submit" value="Borrar" />
+    </form>
+              
+    {% endblock %}

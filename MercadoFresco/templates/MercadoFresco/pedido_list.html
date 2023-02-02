@@ -1,0 +1,25 @@
+{% extends "MercadoFresco/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+<h1>Lista de Pedido</h1>
+<ul>
+    {% for pedido in object_list %}
+
+        <li>
+            <p>Numero de pedido: {{ pedido.id }}</p>
+            <p> 
+                <a href="{% url 'DetailP' pedido.id %}">Ver</a> | 
+                <a href="{% url 'EditP' pedido.id %}">Editar</a> | 
+                <a href="{% url 'DeleteP' pedido.id %}">Borrar</a> 
+            
+            </p> 
+        </li>
+
+    {% endfor %}
+</ul>
+
+<a href="{% url 'NewP'  %}">Nuevo</a> | 
+
+<br>
+{% endblock %}
